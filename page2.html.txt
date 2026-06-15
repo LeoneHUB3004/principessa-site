@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Messaggio del Cavaliere</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pink-bg">
+
+  <canvas id="magic"></canvas>
+
+  <div class="container">
+    <h1 class="typewriter-large">ti amo principessa 💛</h1>
+
+    <div class="lyrics-box">
+      <p>✨ un messaggio scritto solo per te ✨</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

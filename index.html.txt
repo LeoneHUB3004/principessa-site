@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Ingresso segreto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pink-bg">
+
+  <div class="container">
+    <h1>🔒 Inserisci la password segreta</h1>
+
+    <input id="password" type="text" placeholder="gg/mm/aaaa">
+    <button class="magic-btn" onclick="checkPassword()">Entra ✨</button>
+
+    <p id="error" style="color:#b3005f;"></p>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const value = document.getElementById("password").value;
+      if (value === "14/03/2026") {
+        window.location.href = "page1.html";
+      } else {
+        document.getElementById("error").innerText = "Password errata 💔";
+      }
+    }
+  </script>
+
+</body>
+</html>
