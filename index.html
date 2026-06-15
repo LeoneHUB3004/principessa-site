@@ -2,45 +2,41 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ingresso segreto</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="pink-bg">
-  <div class="sparkles"></div>
+  <canvas id="magic"></canvas>
 
-  <main class="card">
+  <div class="container card">
     <h1>🔒 Inserisci la password segreta</h1>
-    <p class="subtitle">Solo una vera principessa può entrare ✨</p>
 
     <input id="password" type="text" inputmode="numeric" maxlength="10" placeholder="gg/mm/aaaa" autocomplete="off">
     <button class="magic-btn" onclick="checkPassword()">Entra ✨</button>
 
-    <p id="error" class="error"></p>
-  </main>
+    <p id="error"></p>
+  </div>
 
   <script>
     const input = document.getElementById("password");
 
-    input.addEventListener("input", function() {
-      let numbers = input.value.replace(/\D/g, "").slice(0, 8);
-      let formatted = numbers;
+    input.addEventListener("input", function () {
+      let digits = input.value.replace(/\D/g, "").slice(0, 8);
+      let formatted = "";
 
-      if (numbers.length > 4) {
-        formatted = numbers.slice(0, 2) + "/" + numbers.slice(2, 4) + "/" + numbers.slice(4);
-      } else if (numbers.length > 2) {
-        formatted = numbers.slice(0, 2) + "/" + numbers.slice(2);
+      if (digits.length <= 2) {
+        formatted = digits;
+      } else if (digits.length <= 4) {
+        formatted = digits.slice(0, 2) + "/" + digits.slice(2);
+      } else {
+        formatted = digits.slice(0, 2) + "/" + digits.slice(2, 4) + "/" + digits.slice(4);
       }
 
       input.value = formatted;
     });
 
-    input.addEventListener("keydown", function(e) {
-      if (e.key === "Enter") checkPassword();
-    });
-
     function checkPassword() {
-      const value = input.value.trim();
+      const value = document.getElementById("password").value;
       if (value === "14/03/2026") {
         window.location.href = "page1.html";
       } else {
@@ -48,5 +44,6 @@
       }
     }
   </script>
+  <script src="script.js"></script>
 </body>
 </html>

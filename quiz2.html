@@ -2,33 +2,38 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Domanda 2</title>
+  <title>Quiz 2</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="pink-bg">
   <canvas id="magic"></canvas>
 
-  <main class="card wide-card">
-    <p class="quiz-step">Domanda 2 di 3</p>
+  <div class="container card">
     <h1>🎁 la sera del vostro primo incontro, hai fatto un piccolo dono al tuo cavaliere, che lui conserva ancora gelosamente, cosa era?</h1>
 
-    <input id="answer" type="text" placeholder="Scrivi la risposta..." autocomplete="off">
-    <button class="magic-btn" onclick="checkAnswer()">Rispondi ✨</button>
-    <p id="error" class="error"></p>
-  </main>
+    <input id="answer" type="text" placeholder="scrivi qui la risposta">
+    <button class="magic-btn" onclick="checkAnswer()">Invia</button>
 
-  <script src="script.js"></script>
+    <p id="feedback"></p>
+  </div>
+
   <script>
-    setupEnterKey("answer", checkAnswer);
     function checkAnswer() {
-      const answer = normalizeAnswer(document.getElementById("answer").value);
-      if (answer === "scontrino" || answer === "uno scontrino") {
-        window.location.href = "quiz3.html";
+      const value = document.getElementById("answer").value.trim().toLowerCase();
+      const feedback = document.getElementById("feedback");
+
+      if (value === "scontrino" || value === "uno scontrino" || value === "lo scontrino") {
+        feedback.className = "success";
+        feedback.innerText = "esatto! meno una, sei sempre piu vicina!";
+        setTimeout(() => {
+          window.location.href = "quiz3.html";
+        }, 1500);
       } else {
-        document.getElementById("error").innerText = "Non è questa... riprova 💔";
+        feedback.className = "error";
+        feedback.innerText = "Sbagliato 💔";
       }
     }
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
