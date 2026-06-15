@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domanda 3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pink-bg">
+  <canvas id="magic"></canvas>
+
+  <main class="card wide-card">
+    <p class="quiz-step">Domanda 3 di 3</p>
+    <h1>🐴 Qual è la data di nascita del prode destriero del tuo cavaliere?</h1>
+
+    <input id="answer" type="text" placeholder="Scrivi la risposta..." autocomplete="off">
+    <button class="magic-btn" onclick="checkAnswer()">Scopri il messaggio 💛</button>
+    <p id="error" class="error"></p>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    setupEnterKey("answer", checkAnswer);
+    function checkAnswer() {
+      const answer = normalizeAnswer(document.getElementById("answer").value);
+      const validAnswers = ["10 luglio 2025", "10/07/2025", "10 luglio", "10/07"];
+
+      if (validAnswers.includes(answer)) {
+        window.location.href = "finale.html";
+      } else {
+        document.getElementById("error").innerText = "Non è questa... riprova 💔";
+      }
+    }
+  </script>
+</body>
+</html>
