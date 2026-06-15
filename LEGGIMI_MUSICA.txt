@@ -1,0 +1,7 @@
+Inserisci qui un file audio romantico royalty-free e rinominalo: music.mp3
+
+Consigli:
+- Pixabay Music
+- YouTube Audio Library
+
+Il sito è già predisposto: se aggiungi music.mp3 nella stessa cartella, la musica partirà dopo l'inserimento corretto della password.

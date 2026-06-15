@@ -2,10 +2,11 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ingresso segreto</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="pink-bg">
+<body class="pink-bg page-transition">
   <canvas id="magic"></canvas>
 
   <div class="container card">
@@ -16,6 +17,10 @@
 
     <p id="error"></p>
   </div>
+
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
 
   <script>
     const input = document.getElementById("password");
@@ -38,7 +43,9 @@
     function checkPassword() {
       const value = document.getElementById("password").value;
       if (value === "14/03/2026") {
-        window.location.href = "page1.html";
+        sessionStorage.setItem("musicAllowed", "yes");
+        startMusic();
+        goToPage("page1.html");
       } else {
         document.getElementById("error").innerText = "Password errata 💔";
       }

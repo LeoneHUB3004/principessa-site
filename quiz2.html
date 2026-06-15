@@ -2,10 +2,11 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz 2</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="pink-bg">
+<body class="pink-bg page-transition">
   <canvas id="magic"></canvas>
 
   <div class="container card">
@@ -17,17 +18,17 @@
     <p id="feedback"></p>
   </div>
 
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
   <script>
     function checkAnswer() {
       const value = document.getElementById("answer").value.trim().toLowerCase();
       const feedback = document.getElementById("feedback");
 
       if (value === "scontrino" || value === "uno scontrino" || value === "lo scontrino") {
-        feedback.className = "success";
-        feedback.innerText = "esatto! meno una, sei sempre piu vicina!";
-        setTimeout(() => {
-          window.location.href = "quiz3.html";
-        }, 1500);
+        goToPage("quiz3.html");
       } else {
         feedback.className = "error";
         feedback.innerText = "Sbagliato 💔";
