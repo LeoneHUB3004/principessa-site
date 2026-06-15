@@ -2,22 +2,26 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Ordine delle Principesse</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="pink-bg page-transition">
   <canvas id="magic"></canvas>
 
-  <div class="container card">
+  <button id="musicButton" class="music-btn" onclick="toggleMusic()">🎵</button>
+
+  <main class="container card">
     <h1 class="typewriter-text" data-text="benvenuta principessa bellissima, se sei qui è perchè ti sei dimostrata degna di far parte dell'ordine segreto delle principesse più belle del mondo, e il tuo cavaliere ha un importante messaggio per te, riuscirai a scoprirlo?"></h1>
 
     <button class="magic-btn" onclick="goToPage('quiz1.html')">Scopri 💛</button>
-  </div>
+  </main>
 
-  <audio id="bgMusic" loop>
+
+  <audio id="bgMusic" loop preload="auto">
     <source src="music.mp3" type="audio/mpeg">
   </audio>
+
 
   <script src="script.js"></script>
 </body>

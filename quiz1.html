@@ -2,25 +2,29 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Quiz 1</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="pink-bg page-transition">
   <canvas id="magic"></canvas>
 
-  <div class="container card">
+  <button id="musicButton" class="music-btn" onclick="toggleMusic()">🎵</button>
+
+  <main class="container card">
     <h1>🍦 qual è il gusto di gelato preferito dal cavaliere?</h1>
 
     <input id="answer" type="text" placeholder="scrivi qui la risposta">
     <button class="magic-btn" onclick="checkAnswer()">Invia</button>
 
     <p id="feedback"></p>
-  </div>
+  </main>
 
-  <audio id="bgMusic" loop>
+
+  <audio id="bgMusic" loop preload="auto">
     <source src="music.mp3" type="audio/mpeg">
   </audio>
+
 
   <script>
     function checkAnswer() {

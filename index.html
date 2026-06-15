@@ -2,25 +2,29 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Ingresso segreto</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="pink-bg page-transition">
   <canvas id="magic"></canvas>
 
-  <div class="container card">
+  <button id="musicButton" class="music-btn" onclick="toggleMusic()">🎵</button>
+
+  <main class="container card">
     <h1>🔒 Inserisci la password segreta</h1>
 
     <input id="password" type="text" inputmode="numeric" maxlength="10" placeholder="gg/mm/aaaa" autocomplete="off">
     <button class="magic-btn" onclick="checkPassword()">Entra ✨</button>
 
     <p id="error"></p>
-  </div>
+  </main>
 
-  <audio id="bgMusic" loop>
+
+  <audio id="bgMusic" loop preload="auto">
     <source src="music.mp3" type="audio/mpeg">
   </audio>
+
 
   <script>
     const input = document.getElementById("password");
@@ -43,8 +47,7 @@
     function checkPassword() {
       const value = document.getElementById("password").value;
       if (value === "14/03/2026") {
-        sessionStorage.setItem("musicAllowed", "yes");
-        startMusic();
+        activateMusic();
         goToPage("page1.html");
       } else {
         document.getElementById("error").innerText = "Password errata 💔";
