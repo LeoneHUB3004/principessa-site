@@ -1,0 +1,71 @@
+body {
+margin: 0;
+font-family: Georgia, serif;
+overflow: hidden;
+}
+
+.pink-bg {
+background: #ffd6e7;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+text-align: center;
+}
+
+.container {
+width: 80%;
+z-index: 2;
+}
+
+h1 {
+color: #5a2a4a;
+}
+
+.magic-btn {
+margin-top: 20px;
+padding: 15px 30px;
+border: none;
+border-radius: 30px;
+background: linear-gradient(45deg, #ff8ac6, #ffb3d9);
+color: white;
+cursor: pointer;
+font-size: 18px;
+}
+
+.typewriter {
+overflow: hidden;
+white-space: nowrap;
+border-right: 3px solid #b3005f;
+animation: typing 4s steps(60,end), blink .8s infinite;
+}
+
+.typewriter-large {
+overflow: hidden;
+white-space: nowrap;
+border-right: 3px solid #b3005f;
+animation: typing 3s steps(20,end), blink .8s infinite;
+}
+
+@keyframes typing {
+from { width: 0 }
+to { width: 100% }
+}
+
+@keyframes blink {
+50% { border-color: transparent }
+}
+
+input {
+padding: 10px;
+border-radius: 10px;
+border: none;
+margin-top: 10px;
+}
+
+canvas {
+position: fixed;
+top: 0;
+left: 0;
+pointer-events: none;
+}
